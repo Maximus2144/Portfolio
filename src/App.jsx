@@ -11,10 +11,10 @@ function App() {
   return (
     <div className="App">
       <Navbar/> 
-     <section style={{height: '100vh'}} id="Header"><Header/></section>
-     <section style={{height: '100vh'}} id="AboutMe"><AboutMe/></section>
-     <section style={{height: '100vh'}} id="Proyects"><Proyects/></section>
-     <section style={{height: '100vh'}} id="ContactMe"><Form/></section>
+     <section style={{height: '100vh', textAlign: 'center', display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center', }} id="Header"><Header/></section>
+     <section style={{height: '100vh', textAlign: 'center', display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center', }} id="AboutMe"><AboutMe/></section>
+     <section style={{height: '100vh', textAlign: 'center', display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center', }} id="Proyects"><Proyects/></section>
+     <section style={{height: '100vh', textAlign: 'center', display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center', }}id="ContactMe"><Form/></section>
      
      <Footer/>
     </div>
