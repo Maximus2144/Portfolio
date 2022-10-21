@@ -10,9 +10,9 @@ const Forms = () => {
   const form = useRef();
 
   const SendEmail = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    emailjs.sendForm('service_xuyb5fk', 'template_pk4kted', form.current, 'oBTved1xzVQ3Iw2SC')
       .then((result) => {
           console.log(result.text);
       }, (error) => {
@@ -58,17 +58,20 @@ const Forms = () => {
       .required("Es necesario que comentes algo"),
   }),
 
-    onSubmit: (values) => {
+    onSubmit: (values, onSubmit) => {
       console.log(values);
       SendEmail(values);
+      onSubmit.resetForm()
     },
    //validationSchema: basicSchemas,
   });
 
 
   return (
-  <form className="col-6" onSubmit={  handleSubmit}
+
+  <form  ref={form} className="col-6" onSubmit={handleSubmit}
    >
+    <div>ContactMe</div>
            
            <label htmlFor=""> <span className="errores"></span></label>
             <input
@@ -118,7 +121,7 @@ const Forms = () => {
 
             <label htmlFor=""><span className="errores"></span></label>
             <input
-              type="number"
+              type="tel"
               className="form-control"
               placeholder="Teléfono"
               aria-label="Teléfono"
@@ -132,8 +135,11 @@ const Forms = () => {
             )}
             <label htmlFor=""><span className="errores"></span></label>
             <input
+              rows="3" 
+              maxlength="2500"
               type="text-area"
               className="form-control"
+              id="text-area"
               placeholder="Consulta"
               aria-label="Consulta"
               name="consulta"
@@ -149,7 +155,7 @@ const Forms = () => {
 
 
 
-             <button type="submit">Submit</button>
+             <button className="espacio" onclick="fun()" type="submit">Submit</button>
 
           </form>
   );
