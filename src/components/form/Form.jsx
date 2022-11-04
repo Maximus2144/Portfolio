@@ -72,7 +72,8 @@ const Forms = () => {
   <form  ref={form} className="col-6" onSubmit={handleSubmit}
    >
     <div>ContactMe</div>
-           
+           <div style={{display: 'flex'}}>
+            <div style={{marginRight: '10px'}}>
            <label htmlFor=""> <span className="errores"></span></label>
             <input
               type="text"
@@ -88,7 +89,8 @@ const Forms = () => {
             {touched.nombre && errors.nombre && (
               <span className="errores">{errors.nombre}</span>
             )}
-
+            </div>
+            <div>
             <label htmlFor=""><span className="errores"></span></label>
             <input
               type="text"
@@ -103,7 +105,8 @@ const Forms = () => {
             {touched.apellido && errors.apellido && (
               <span className="errores">{errors.apellido}</span>
             )}
-
+            </div>
+             </div>
             <label htmlFor=""><span className="errores"></span></label>
             <input
               type="text"
@@ -114,7 +117,7 @@ const Forms = () => {
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
-            />
+            /> 
             {touched.email && errors.email && (
               <span className="errores">{errors.email}</span>
             )}
@@ -134,9 +137,9 @@ const Forms = () => {
               <span className="errores">{errors.telefono}</span>
             )}
             <label htmlFor=""><span className="errores"></span></label>
-            <input
-              rows="3" 
-              maxlength="2500"
+            <textarea
+              cols="10" rows="5" charswidth="23" 
+              maxLength="2500"
               type="text-area"
               className="form-control"
               id="text-area"
@@ -146,7 +149,7 @@ const Forms = () => {
               value={values.consulta}
               onChange={handleChange}
               onBlur={handleBlur}
-            />
+            /> 
             {touched.consulta && errors.consulta && (
               <span className="errores">{errors.consulta}</span>
             )}
@@ -155,7 +158,7 @@ const Forms = () => {
 
 
 
-             <button className="espacio" onclick="fun()" type="submit">Submit</button>
+             <button className="espacio" type="submit">Submit</button>
 
           </form>
   );
@@ -164,106 +167,5 @@ const Forms = () => {
 
 
       export default Forms
-
-    /* const {
-    values,
-    errors,
-    touched,
-    handleSubmit,
-    handleChange,
-    handleBlur,
-    resetForm,
-  } = useFormik({
-    initialValues: {
-      nombre: "",
-      apellido: "",
-      email: "",
-      telefono: "",
-      consulta: "",
-    },
-    onSubmit: (values) => {
-      SendEmail(values);
-    },
-    validationSchema: basicSchemas,
-  }); */
-
-  /*const formik = useFormik({
-    initialValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      Phone: '',
-    },
-
-    validationSchema: Yup.object({
-      firstName: Yup.string().requiered(true),
-      lastName: Yup.string().requiered(true),
-      email: Yup.string().requiered(true,"email es requerido"),
-      Phone: Yup.string().requiered(false),
-    }),
-    const enviarFormulario =() => {
-
-    }
-
-    onSubmit: (values) => {
-     alert(JSON.stringify(values, null, 2));
-    },
-  });
-
-  return (
-
-    <form onSubmit={formik.handleSubmit}>
-      <h2>CotactMe</h2>
-      <label htmlFor="firstName">First Name</label>
-      <input
-        id="firstName"
-        name="firstName"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.firstName}
-        error={formik.values.firstName}
-
-      />
-      <label htmlFor="lastName">Last Name</label>
-      <input
-        id="lastName"
-        name="lastName"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.lastName}
-        error={formik.values.lastName}
-      />
-      <label htmlFor="email">Email Address</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        onChange={formik.handleChange}
-        value={formik.values.email}
-        error={formik.values.email}
-
-      />
-       <label htmlFor="Phone Number">Phone Number</label>
-      <input
-        id="Phone"
-        name="Phone"
-        type="Phone"
-        onChange={formik.handleChange}
-        value={formik.values.Phone}
-        error={formik.values.Phone}
-
-      />
-      
-     <input type="text"
-          onChange={formik.handleChange}
-          value={formik.values.text}
-          error={formik.values.text} />
-     
-      <button type="submit">Submit</button>
-    </form>
-  );
-};*/
-
-
 
 

@@ -6,6 +6,7 @@ import Footer from './components/footer/Footer';
 import Form from './components/form/Form';
 import Proyects from './components/proyects/Proyects';
 import Main from './components/main/Main';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

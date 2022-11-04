@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 const Navbarr = () => {
   return (
-    <Navbar claseName="topNavbar sticky-md-top" fixed="top" bg="light" expand="lg">
+    <Navbar className="topNavbar sticky-md-top" fixed="top" bg="light" expand="lg">
     <Container>
       <Navbar.Brand href="/">Home</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
